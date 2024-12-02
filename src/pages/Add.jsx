@@ -16,7 +16,7 @@ export default function Add({ token }) {
   const [category, setCategory] = useState("Men");
   const [subCategory, setSubCategory] = useState("Topwear");
   const [sizes, setSizes] = useState([]);
-  const [bestseller, setBestseller] = useState(false);
+  const [negosiasi, setNegosiasi] = useState(false);
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
@@ -34,7 +34,7 @@ export default function Add({ token }) {
       formData.append("category", category);
       formData.append("subCategory", subCategory);
       formData.append("sizes", JSON.stringify(sizes));
-      formData.append("bestseller", bestseller);
+      formData.append("negosiasi", negosiasi);
 
       const response = await axios.post(
         backendUrl + "/api/product/add",
@@ -47,7 +47,7 @@ export default function Add({ token }) {
 
         setName("");
         setDescription("");
-        setBestseller(false);
+        setNegosiasi(false);
         setImage1(false);
         setImage2(false);
         setImage3(false);
@@ -285,13 +285,13 @@ export default function Add({ token }) {
 
       <div className="flex gap-2 mt-2">
         <input
-          onChange={() => setBestseller((prev) => !prev)}
-          checked={bestseller}
+          onChange={() => setNegosiasi((prev) => !prev)}
+          checked={negosiasi}
           type="checkbox"
-          id="bestseller"
+          id="negosiasi"
         />
-        <label className="cursor-pointer" htmlFor="bestseller">
-          Add to Bestseller
+        <label className="cursor-pointer" htmlFor="negosiasi">
+          Add to Negosiasi
         </label>
       </div>
 
