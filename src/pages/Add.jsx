@@ -16,7 +16,7 @@ export default function Add({ token }) {
   const [category, setCategory] = useState("Men");
   const [subCategory, setSubCategory] = useState("Topwear");
   const [sizes, setSizes] = useState([]);
-  const [negosiasi, setNegosiasi] = useState(false);
+  const [bestseller, setBestseller] = useState(false);
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
@@ -34,7 +34,7 @@ export default function Add({ token }) {
       formData.append("category", category);
       formData.append("subCategory", subCategory);
       formData.append("sizes", JSON.stringify(sizes));
-      formData.append("negosiasi", negosiasi);
+      formData.append("bestseller", bestseller);
 
       const response = await axios.post(
         backendUrl + "/api/product/add",
@@ -47,7 +47,7 @@ export default function Add({ token }) {
 
         setName("");
         setDescription("");
-        setNegosiasi(false);
+        setBestseller(false);
         setImage1(false);
         setImage2(false);
         setImage3(false);
@@ -69,7 +69,7 @@ export default function Add({ token }) {
       className="flex flex-col w-full items-start gap-3"
     >
       <div>
-        <p className="mb-2">Upload Image</p>
+        <p className="mb-2">Unggah Gambar</p>
 
         <div className="flex gap-2">
           <label htmlFor="image1">
@@ -128,56 +128,56 @@ export default function Add({ token }) {
       </div>
 
       <div className="w-full">
-        <p className="mb-2">Product Name</p>
+        <p className="mb-2">Nama Produk</p>
         <input
           onChange={(e) => setName(e.target.value)}
           value={name}
           className="w-full max-w-[500px] px-3 py-2"
           type="text"
-          placeholder="Product Name"
+          placeholder="Nama Produk"
           required
         />
       </div>
 
       <div className="w-full">
-        <p className="mb-2">Product Description</p>
+        <p className="mb-2">Deskripsi Produk</p>
         <textarea
           onChange={(e) => setDescription(e.target.value)}
           value={description}
           className="w-full max-w-[500px] px-3 py-2"
           type="text"
-          placeholder="Write Content Here"
+          placeholder="Tambahkan Deskripsi Produk"
           required
         />
       </div>
 
       <div className="flex flex-col sm:flex-row gap-2 w-full sm:gap-8">
         <div>
-          <p className="mb-2">Product Category</p>
+          <p className="mb-2">Kategori Produk</p>
           <select
             onChange={(e) => setCategory(e.target.value)}
             className="w-full px-3 py-2"
           >
-            <option value="Men">Men</option>
-            <option value="Women">Women</option>
-            <option value="Kids">Kids</option>
+            <option value="Men">Pria</option>
+            <option value="Women">Wanita</option>
+            <option value="Kids">Anak-anak</option>
           </select>
         </div>
 
         <div>
-          <p className="mb-2">Sub Category</p>
+          <p className="mb-2">Sub Kategori</p>
           <select
             onChange={(e) => setSubCategory(e.target.value)}
             className="w-full px-3 py-2"
           >
-            <option value="Topwear">Topwear</option>
-            <option value="Bottomwear">Bottomwear</option>
-            <option value="Winterwear">Winterwear</option>
+            <option value="Topwear">Pakaian Atas</option>
+            <option value="Bottomwear">Pakaian Bawah</option>
+            <option value="Winterwear">Pakaian Musim Dingin</option>
           </select>
         </div>
 
         <div>
-          <p className="mb-2">Product Price</p>
+          <p className="mb-2">Harga Produk</p>
           <input
             onChange={(e) => setPrice(e.target.value)}
             className="w-full px-3 py-2 sm:w-[120px]"
@@ -189,7 +189,7 @@ export default function Add({ token }) {
       </div>
 
       <div>
-        <p className="mb-2">Product Size</p>
+        <p className="mb-2">Ukuran Produk</p>
         <div className="flex gap-3">
           <div
             onClick={() =>
@@ -285,18 +285,18 @@ export default function Add({ token }) {
 
       <div className="flex gap-2 mt-2">
         <input
-          onChange={() => setNegosiasi((prev) => !prev)}
-          checked={negosiasi}
+          onChange={() => setBestseller((prev) => !prev)}
+          checked={bestseller}
           type="checkbox"
-          id="negosiasi"
+          id="bestseller"
         />
-        <label className="cursor-pointer" htmlFor="negosiasi">
-          Add to Negosiasi
+        <label className="cursor-pointer" htmlFor="bestseller">
+          Tambahkan ke Terlaris
         </label>
       </div>
 
       <button type="submit" className="w-28 py-3 mt-4 bg-black text-white">
-        ADD{" "}
+        Tambah{" "}
       </button>
     </form>
   );

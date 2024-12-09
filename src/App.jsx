@@ -9,6 +9,7 @@ import Login from "./components/Login";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Negotiations from "./pages/Negotiations";
 
 export const backendUrl = import.meta.env.VITE_BACKEND_URL;
 export const currency = "IDR"
@@ -38,6 +39,7 @@ export default function App() {
                 <Route path="/add" element={<Add token={token} />} />
                 <Route path="/list" element={<List token={token} />} />
                 <Route path="/orders" element={<Orders token={token} />} />
+                <Route path="/negotiations" element={<Negotiations token={token} />} />
               </Routes>
             </div>
           </div>

@@ -31,7 +31,7 @@ export default function Login({ setToken }) {
         <form onSubmit={onSubmitHandler} action="">
           <div className="mb-3 min-w-72">
             <p className="text-sm font-medium text-gray-700 mb-2">
-              Email Address
+              Alamat Email
             </p>
             <input
               onChange={(e) => setEmail(e.target.value)}
@@ -62,7 +62,7 @@ export default function Login({ setToken }) {
             type="submit"
             className="mt-2 w-full py02 px-4 rounded-md text-white bg-black"
           >
-            Login
+            Masuk
           </button>
         </form>
       </div>

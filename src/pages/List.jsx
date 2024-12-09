@@ -46,15 +46,15 @@ export default function List({ token }) {
 
   return (
     <>
-      <p className="mb-2">All Product List</p>
+      <p className="mb-2">Daftar Semua Produk</p>
       <div className="flex flex-col gap-2">
         {/* List Table Products */}
         <div className="hidden md:grid grid-cols-[1fr_3fr_1fr_1fr_1fr] items-center px-2 py-1 border bg-gray-100 text-sm ">
-          <b>Image</b>
-          <b>Name</b>
-          <b>Category</b>
-          <b>Price</b>
-          <b className="text-center">Action</b>
+          <b>Gambar</b>
+          <b>Nama</b>
+          <b>Kategori</b>
+          <b>Harga</b>
+          <b className="text-center">Aksi</b>
         </div>
 
         {list.map((item, index) => (

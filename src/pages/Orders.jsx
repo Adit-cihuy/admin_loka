@@ -56,7 +56,7 @@ export default function Orders({ token }) {
   }, [token]);
   return (
     <div>
-      <h3>Order Page</h3>
+      <h3>Halaman Pesanan</h3>
       <div>
         {orders.map((order, index) => (
           <div
