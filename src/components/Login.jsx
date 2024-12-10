@@ -40,7 +40,7 @@ export default function Login({ setToken }) {
               type="email"
               name="email"
               id="email"
-              placeholder="Enter your email"
+              placeholder="Masukkan Email"
               required
             />
           </div>
@@ -53,7 +53,7 @@ export default function Login({ setToken }) {
               type="password"
               name="password"
               id="password"
-              placeholder="Enter your Password"
+              placeholder="Masukkan Password"
               required
             />
           </div>

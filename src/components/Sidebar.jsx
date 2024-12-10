@@ -26,7 +26,7 @@ export default function Sidebar() {
           to="/orders"
         >
           <img src={assets.order_icon} alt="orders" className="w-5 h-5" />
-          <p className="hidden md:block">Orderan</p>
+          <p className="hidden md:block">Pesanan</p>
         </NavLink>
 
         <NavLink
