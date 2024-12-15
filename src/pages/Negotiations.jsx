@@ -84,7 +84,7 @@ export default function Negotiations({ token }) {
               </p>
               <p>Status: {negotiation.status}</p>
             </div>
-            // {/* Tombol aksi hanya muncul untuk status pending */}
+             {/* Tombol aksi hanya muncul untuk status pending */}
             {negotiation.status === "pending" && (
               <div className="flex gap-2">
                 <button
